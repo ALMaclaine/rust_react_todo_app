@@ -6,3 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+r2d2_sqlite = "0.19.0"
+rusqlite = "0.26.3"
+#refinery = { version = "0.7.0", features = ["rusqlite"]}
+barrel = { version = "0.7.0", features = ["sqlite3"] }
+r2d2 = "0.8.9"
+dotenv = "0.15.0"
+
+[dependencies.refinery]
+rev = "cfe9eb8439ec44a6da8cae41afb9007487ed0e08" # Current latest commit
+git = "https://github.com/rust-db/refinery"
+features = [ "rusqlite-bundled" ]
