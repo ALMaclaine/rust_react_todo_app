@@ -46,16 +46,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
-name = "cc"
-version = "1.0.72"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22a9137b95ea06864e018375b72adfb7db6e6f68cfc8df5a04d00288050485ee"
-
-[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+
+[[package]]
+name = "db"
+version = "0.1.0"
+source = "git+https://github.com/ALMRust/db#7caeca8eb56cb6258bdc25d156e81fdab0a4c95b"
+dependencies = [
+ "r2d2",
+ "r2d2_sqlite",
+ "rusqlite",
+]
 
 [[package]]
 name = "dotenv"
@@ -158,7 +162,6 @@ version = "0.23.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d2cafc7c74096c336d9d27145f7ebd4f4b6f95ba16aa5a282387267e6925cb58"
 dependencies = [
- "cc",
  "pkg-config",
  "vcpkg",
 ]
@@ -286,8 +289,9 @@ dependencies = [
 
 [[package]]
 name = "refinery"
-version = "0.7.0"
-source = "git+https://github.com/rust-db/refinery?rev=cfe9eb8439ec44a6da8cae41afb9007487ed0e08#cfe9eb8439ec44a6da8cae41afb9007487ed0e08"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5ac85c2e83f234b1e5ffe74e49d61e91eb4a7ea66706b024bf35e08923925e24"
 dependencies = [
  "refinery-core",
  "refinery-macros",
@@ -295,8 +299,9 @@ dependencies = [
 
 [[package]]
 name = "refinery-core"
-version = "0.7.0"
-source = "git+https://github.com/rust-db/refinery?rev=cfe9eb8439ec44a6da8cae41afb9007487ed0e08#cfe9eb8439ec44a6da8cae41afb9007487ed0e08"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c2ecf1bb59a1452e5ec7fa6effa5d11cc5be7108bbee495a94e69fe57334a54"
 dependencies = [
  "async-trait",
  "cfg-if",
@@ -315,8 +320,9 @@ dependencies = [
 
 [[package]]
 name = "refinery-macros"
-version = "0.7.0"
-source = "git+https://github.com/rust-db/refinery?rev=cfe9eb8439ec44a6da8cae41afb9007487ed0e08#cfe9eb8439ec44a6da8cae41afb9007487ed0e08"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a7405de3d24dae644c120063fa79666f0cf166f295aa32399cdeaa163835428a"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -362,6 +368,7 @@ name = "rust-react-todo-app"
 version = "0.1.0"
 dependencies = [
  "barrel",
+ "db",
  "dotenv",
  "r2d2",
  "r2d2_sqlite",
@@ -395,18 +402,18 @@ checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
 
 [[package]]
 name = "serde"
-version = "1.0.132"
+version = "1.0.133"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8b9875c23cf305cd1fd7eb77234cbb705f21ea6a72c637a5c6db5fe4b8e7f008"
+checksum = "97565067517b60e2d1ea8b268e59ce036de907ac523ad83a0475da04e818989a"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.132"
+version = "1.0.133"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ecc0db5cb2556c0e558887d9bbdcf6ac4471e83ff66cf696e5419024d1606276"
+checksum = "ed201699328568d8d08208fdd080e3ff594e6c422e438b6705905da01005d537"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -531,9 +538,9 @@ checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
 
 [[package]]
 name = "version_check"
-version = "0.9.3"
+version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
+checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 
 [[package]]
 name = "walkdir"

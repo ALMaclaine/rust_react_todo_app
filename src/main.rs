@@ -1,5 +1,5 @@
 mod app;
-mod db;
+mod controllers;
 
 fn main() {
     app::app();
